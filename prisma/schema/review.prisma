@@ -4,7 +4,7 @@ model Review {
   comment String?  @db.Text
   images  String[]
 
-  userId String @unique
+  userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   gearItemId String
@@ -13,5 +13,7 @@ model Review {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  @@unique([userId, gearItemId])
+  @@index([gearItemId])
   @@map("reviews")
 }
