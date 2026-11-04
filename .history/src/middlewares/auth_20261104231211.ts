@@ -50,7 +50,7 @@ export const auth = (...requiredRoles: Role[]) => {
          }
 
          if(user.activeStatus === "SUSPEND"){
-            throw new Error("Your account has been blocked. Please contact support.")
+            throw new Error("Your account has been suspend. Please contact support.")
          }
          req.user = {
             id,
