@@ -1,0 +1,3 @@
+modal User {
+    id String @id @default(uuid())
+}

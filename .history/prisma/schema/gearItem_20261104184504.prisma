@@ -1,0 +1,17 @@
+model GearItem {
+  id             String   @id @default(uuid())
+  title          String   @db.VarChar(255)
+  description    String   @db.Text
+  categories     String[]
+  price          Decimal  @db.Decimal(10, 2)
+  discountPrice  Decimal? @db.Decimal(10, 2)
+  rating         Float    @default(0)
+  stock          Int      @default(0)
+
+  reviews        Review[]
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("gear_items")
+}

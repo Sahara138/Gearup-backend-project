@@ -1,0 +1,9 @@
+enum ActiveStatus {
+    ACTIVATE
+    SUSPEND
+}
+
+enum Role {
+    Customer
+    
+}

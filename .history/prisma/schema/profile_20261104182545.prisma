@@ -1,0 +1,5 @@
+model Profile {
+    id String @id @default(uuid())
+    profilePhoto String?
+    bio String
+}

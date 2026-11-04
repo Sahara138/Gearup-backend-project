@@ -1,0 +1,8 @@
+enum ActiveStatus {
+    ACTIVATE
+    SUSPEND
+}
+
+enum Role {
+    
+}

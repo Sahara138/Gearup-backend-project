@@ -1,0 +1,18 @@
+model RentalOrderItem {
+  id            String      @id @default(uuid())
+
+  rentalOrderId String
+  rentalOrder   RentalOrder @relation(fields: [rentalOrderId], references: [id], onDelete: Cascade)
+
+  gearItemId    String
+  gearItem      GearItem    @relation(fields: [gearItemId], references: [id])
+
+  quantity      Int
+  unitPrice     Decimal     @db.Decimal(10, 2)
+  subtotal      Decimal     @db.Decimal(10, 2)
+
+  createdAt     DateTime    @default(now())
+
+  @@unique([rentalOrderId, gearItemId])
+  @@map("rental_order_items")
+}

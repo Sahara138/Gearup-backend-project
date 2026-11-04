@@ -1,0 +1,4 @@
+model gearItem {
+    id String @id @default(uuid())
+    title Str
+}

@@ -1,0 +1,8 @@
+model gearItem {
+    id String @id @default(uuid())
+    title      String     @db.VarChar(255)
+    description    String     @db.Text
+    price 
+    rating
+    review
+}

@@ -1,0 +1,9 @@
+model Profile {
+    id String @id @default(uuid())
+    profilePhoto String?
+    phoneNumber String
+    
+    userId String @unique
+
+    user User 
+}

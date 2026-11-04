@@ -1,0 +1,17 @@
+model Review {
+  id          String   @id @default(uuid())
+  rating      Int
+  comment     String?  @db.Text
+  images      String[]
+
+  userId      String @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  gearItemId  String
+  gearItem    GearItem @relation(fields: [gearItemId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("reviews")
+}

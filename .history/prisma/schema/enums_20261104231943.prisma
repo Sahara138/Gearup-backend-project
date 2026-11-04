@@ -1,0 +1,16 @@
+enum ActiveStatus {
+  ACTIVATE
+  SUSPEND
+}
+
+enum Role {
+  CUSTOMER
+  PROVIDER
+  ADMIN
+}
+
+enum GearStatus {
+  ACTIVE
+  INACTIVE
+  REMOVED
+}

@@ -1,0 +1,3 @@
+model gearItem {
+    id String @id @default()
+}
