@@ -5,7 +5,7 @@ import { gearItemsController } from "./gearItem.controller.js";
 
 const router = Router();
 
-// Provider inventory endpoint
+// Provider inventory endpoint (must come before /:gearItemId)
 router.get("/my-gear", auth(Role.ADMIN, Role.PROVIDER), gearItemsController.getMyGearItems);
 
 // Public gear listings with search, filter, pagination
@@ -24,4 +24,9 @@ router.put("/:gearItemId", auth(Role.ADMIN, Role.PROVIDER), gearItemsController.
 // Remove gear from inventory (Admin or owning Provider)
 router.delete("/:gearItemId", auth(Role.ADMIN, Role.PROVIDER), gearItemsController.deleteGearItems);
 
+// Admin dedicated gear router (/api/admin/gear)
+const adminGearRouter = Router();
+adminGearRouter.get("/", auth(Role.ADMIN), gearItemsController.getAllGearItems);
+
 export const gearItemsRoutes = router;
+export const adminGearRoutes = adminGearRouter;

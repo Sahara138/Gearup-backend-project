@@ -18,9 +18,15 @@ declare global {
     }
 }
 
+// User registration & profile
 router.post("/register", userController.registerUser);
-router.get("/me", auth(Role.ADMIN,Role.PROVIDER,Role.CUSTOMER), userController.getMyProfile );
-router.put("/my-profile", auth(Role.ADMIN,Role.PROVIDER,Role.CUSTOMER), userController.updateMyProfile)
+router.get("/me", auth(Role.ADMIN, Role.PROVIDER, Role.CUSTOMER), userController.getMyProfile);
+router.put("/my-profile", auth(Role.ADMIN, Role.PROVIDER, Role.CUSTOMER), userController.updateMyProfile);
 
+// Dedicated Admin User Management Router (/api/admin/users)
+const adminUserRouter = Router();
+adminUserRouter.get("/", auth(Role.ADMIN), userController.getAllUsers);
+adminUserRouter.patch("/:id", auth(Role.ADMIN), userController.updateUserStatus);
 
 export const userRoutes = router;
+export const adminUserRoutes = adminUserRouter;
