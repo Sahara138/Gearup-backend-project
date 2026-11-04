@@ -4,9 +4,6 @@ import httpStatus from "http-status";
 import { userService } from "./user.service.js";
 import { catchAsync } from "../../utils/catchAsync.js";
 import { sendResponse } from "../../utils/sendResponse.js";
-import config from "../../config/index.js";
-import jwt from "jsonwebtoken";
-
 
  const registerUser = catchAsync(async(req:Request, res:Response, next:NextFunction) => {
      const payload = req.body;

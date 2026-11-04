@@ -6,7 +6,7 @@
     "moduleResolution": "NodeNext",
     "target": "ES2023",
     "esModuleInterop": true,
-    "ignoreDeprecations": "6.0",
+    // "ignoreDeprecations": "6.0",
     "types": ["node"],
     "sourceMap": true,
     "declaration": true,
